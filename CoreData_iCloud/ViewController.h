@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IRCoreDataController.h"
+
+
 
 @interface ViewController : UIViewController
 
+
+@property (strong) NSUbiquitousKeyValueStore *iCloudKeyValueStore;
 
 @end
 

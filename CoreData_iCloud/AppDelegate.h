@@ -7,13 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PersistentStack.h"
-#import "IRCoreDataController.h"
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, strong, readonly) IRCoreDataController *coreDataController;
 
 @end
 

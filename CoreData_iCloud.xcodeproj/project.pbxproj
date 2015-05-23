@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A3474C811B10FD920075F58B /* ReadMe.md in Sources */ = {isa = PBXBuildFile; fileRef = A3474C801B10FD920075F58B /* ReadMe.md */; };
+		A3474C871B1137DC0075F58B /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = A3474C861B1137DC0075F58B /* Event.m */; };
 		A3C03F2B1A9791DC0044A49A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C03F2A1A9791DC0044A49A /* main.m */; };
 		A3C03F2E1A9791DC0044A49A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C03F2D1A9791DC0044A49A /* AppDelegate.m */; };
 		A3C03F311A9791DC0044A49A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C03F301A9791DC0044A49A /* ViewController.m */; };
@@ -33,6 +34,8 @@
 
 /* Begin PBXFileReference section */
 		A3474C801B10FD920075F58B /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		A3474C851B1137DC0075F58B /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = ../Event.h; sourceTree = "<group>"; };
+		A3474C861B1137DC0075F58B /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = ../Event.m; sourceTree = "<group>"; };
 		A3C03F251A9791DC0044A49A /* CoreData_iCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreData_iCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C03F291A9791DC0044A49A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3C03F2A1A9791DC0044A49A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -102,15 +105,17 @@
 				A3C03F2D1A9791DC0044A49A /* AppDelegate.m */,
 				A3C03F2F1A9791DC0044A49A /* ViewController.h */,
 				A3C03F301A9791DC0044A49A /* ViewController.m */,
-				A3C03F4E1A9792070044A49A /* IRCoreDataController.h */,
-				A3C03F4F1A9792070044A49A /* IRCoreDataController.m */,
 				A3E788821A97B2AA002C64FE /* PersistentStack.h */,
 				A3E788831A97B2AA002C64FE /* PersistentStack.m */,
 				A3C03F321A9791DC0044A49A /* Main.storyboard */,
 				A3C03F351A9791DC0044A49A /* Images.xcassets */,
 				A3C03F371A9791DC0044A49A /* LaunchScreen.xib */,
+				A3C03F4E1A9792070044A49A /* IRCoreDataController.h */,
+				A3C03F4F1A9792070044A49A /* IRCoreDataController.m */,
 				A3C03F281A9791DC0044A49A /* Supporting Files */,
 				A3E788851A97B336002C64FE /* Model.xcdatamodeld */,
+				A3474C851B1137DC0075F58B /* Event.h */,
+				A3474C861B1137DC0075F58B /* Event.m */,
 			);
 			path = CoreData_iCloud;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 				A3C03F311A9791DC0044A49A /* ViewController.m in Sources */,
 				A3C03F2E1A9791DC0044A49A /* AppDelegate.m in Sources */,
 				A3C03F2B1A9791DC0044A49A /* main.m in Sources */,
+				A3474C871B1137DC0075F58B /* Event.m in Sources */,
 				A3E788841A97B2AA002C64FE /* PersistentStack.m in Sources */,
 				A3474C811B10FD920075F58B /* ReadMe.md in Sources */,
 				A3E788871A97B336002C64FE /* Model.xcdatamodeld in Sources */,

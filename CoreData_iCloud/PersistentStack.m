@@ -77,9 +77,10 @@
     NSLog(@"%s", __PRETTY_FUNCTION__);
     NSLog(@"%@", note.userInfo.description);
     
-    NSManagedObjectContext *moc = self.managedObjectContext;
-    [moc performBlock:^{
-        [moc mergeChangesFromContextDidSaveNotification:note];
+    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+    [managedObjectContext performBlock:^{
+
+        [managedObjectContext mergeChangesFromContextDidSaveNotification:note];
         
         // you may want to post a notification here so that which ever part of your app
         // needs to can react appropriately to what was merged. 
@@ -106,14 +107,14 @@
 // (either globally, or just for your app) or if the user changes
 // iCloud accounts.
 - (void)storesWillChange:(NSNotification *)note {
-    NSManagedObjectContext *moc = self.managedObjectContext;
-    [moc performBlockAndWait:^{
+    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+    [managedObjectContext performBlockAndWait:^{
         NSError *error = nil;
-        if ([moc hasChanges]) {
-            [moc save:&error];
+        if ([managedObjectContext hasChanges]) {
+            [managedObjectContext save:&error];
         }
         
-        [moc reset];
+        [managedObjectContext reset];
     }];
     
     // now reset your UI to be prepared for a totally different

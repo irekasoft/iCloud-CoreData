@@ -8,9 +8,9 @@
 
 #import "AppDelegate.h"
 
+
 @interface AppDelegate ()
-@property (nonatomic, strong) NSManagedObjectContext* managedObjectContext;
-@property (nonatomic, strong) PersistentStack* persistentStack;
+
 
 @end
 
@@ -19,12 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    _coreDataController = [[IRCoreDataController alloc] init];
-    [_coreDataController loadPersistentStores];
+ 
     
     return YES;
 }
-
 
 
 

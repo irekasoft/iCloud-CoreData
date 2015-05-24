@@ -39,6 +39,9 @@
     
     [self refreshCoreData];
 }
+
+#pragma mark - core data elements
+
 - (NSURL*)storeURL
 {
     NSURL* documentsDirectory = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:YES error:NULL];
@@ -50,7 +53,6 @@
 }
 - (void)refreshCoreData{
     // Configure interface objects here.
-    
     
     self.persistentStack = [[PersistentStack alloc] initWithStoreURL:self.storeURL modelURL:self.modelURL];
     self.managedObjectContext = self.persistentStack.managedObjectContext;
@@ -67,7 +69,6 @@
     NSError *error = nil;
     NSArray *result = [self.managedObjectContext executeFetchRequest:request error:&error];
     
-    
     self.dataArray = @[@"sample", @"array"];
     
     NSMutableArray *tempArray = [NSMutableArray array];
@@ -77,7 +78,6 @@
         [tempArray addObject:[event.timeStamp description]];
     }
     self.dataArray = tempArray;
-    
     
     [self.tableView reloadData];
     
@@ -89,7 +89,13 @@
     
     if (ICLOUD_ONLY) {
         
-        selectedIdx = (NSInteger)[self.iCloudKeyValueStore doubleForKey:K_PROFILE];
+        if (![self.iCloudKeyValueStore doubleForKey:K_PROFILE]) {
+            selectedIdx = (NSInteger)[self.iCloudKeyValueStore doubleForKey:K_PROFILE];
+        }else {
+            selectedIdx = -1;
+        }
+        
+
         NSLog(@"sel %ld", selectedIdx);
         
     }else{
@@ -185,6 +191,7 @@
                 self.lbl_icloud_status.text = @"iCloud is avalaible";
                 self.switch_enable_iCloud.enabled = YES;
             });
+            NSLog(@"ubiquityurl %@",ubiquityURL);
             
         }
         
@@ -237,6 +244,8 @@
     
     cell.textLabel.text = self.dataArray[indexPath.row];
 }
+
+#pragma mark - actions
 
 - (IBAction)addItem:(id)sender {
     

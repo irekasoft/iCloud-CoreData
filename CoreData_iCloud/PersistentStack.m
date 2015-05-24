@@ -97,6 +97,7 @@
         for (NSManagedObjectID *objID in allChanges) {
             // do whatever you need to with the NSManagedObjectID
             // you can retrieve the object from with [moc objectWithID:objID]
+            
         }
 
     }];
